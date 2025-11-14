@@ -21,7 +21,7 @@ jobs:
     uses: laur89/workflows/.github/workflows/py-build-publish-app.yml@master
     #secrets:
       #token: ${{ secrets.GITHUB_TOKEN }}
-    #secrets: inherit
+    secrets: inherit
 
 
   # note publish to pypi cannot be ran from reusable workflows, follow
