@@ -14,8 +14,8 @@ on: [push]
 
 jobs:
   call-build:
-    permissions:
-      contents: write
+    #permissions:
+      #contents: write
       #pull-requests: write
       #id-token: write
     uses: haridusministeerium/workflows/.github/workflows/py-build-publish-app.yml@master
