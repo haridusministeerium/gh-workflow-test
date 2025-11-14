@@ -1,4 +1,10 @@
 # from https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows#example-caller-workflow
+#
+# this version uses PATs or GH APP token instead of the  automatically generated
+# GITHUB_TOKEN; this is because the latter doesn't allow triggering workflows
+# off tag pushes if said tag was pushed by a workflow using GITHUB_TOKEN (the
+# recursive call protection GH has built in)
+#
 name: Call a reusable workflow
 
 #on:
@@ -9,20 +15,10 @@ on: [push]
 #on:
   #push:
     #branches: [ "main", "master" ]
-#permissions:
-  #contents: write
 
 jobs:
   call-build:
-    #permissions:
-      #contents: write
-      #pull-requests: write
-      #id-token: write
     uses: haridusministeerium/workflows/.github/workflows/py-build-publish-app.yml@master
     #secrets:
       #token: ${{ secrets.GITHUB_TOKEN }}
     secrets: inherit
-
-
-  # note publish to pypi cannot be ran from reusable workflows, follow
-  # https://github.com/pypa/gh-action-pypi-publish/issues/166 for more details

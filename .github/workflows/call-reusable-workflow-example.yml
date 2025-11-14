@@ -1,4 +1,6 @@
-# from https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows#example-caller-workflow
+# this version tries to use the automatically generated GITHUB_TOKEN instead of
+# utilizing PATs or GH APP tokens
+#
 name: Call a reusable workflow
 
 #on:
