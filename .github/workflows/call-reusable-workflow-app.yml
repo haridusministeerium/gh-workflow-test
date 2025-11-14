@@ -18,7 +18,7 @@ jobs:
       contents: write
       #pull-requests: write
       #id-token: write
-    uses: laur89/workflows/.github/workflows/py-build-publish-app.yml@master
+    uses: haridusministeerium/workflows/.github/workflows/py-build-publish-app.yml@master
     #secrets:
       #token: ${{ secrets.GITHUB_TOKEN }}
     secrets: inherit
