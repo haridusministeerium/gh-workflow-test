@@ -11,7 +11,9 @@ name: Call a reusable workflow
   #pull_request:
     #branches:
       #- main
-on: [push]
+# note "create" event is just so our flows trigger on tag pushes that
+# are tagged with [ci skip], see https://github.com/orgs/community/discussions/179637
+on: [push, create]
 #on:
   #push:
     #branches: [ "main", "master" ]
